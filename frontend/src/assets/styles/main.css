@@ -1,0 +1,503 @@
+/* Main CSS Styles */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f8f9fa;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #003366;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .main-nav li {
+    margin-left: 1.5rem;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .main-nav a:hover {
+    border-color: white;
+  }
+  
+  /* Main Container */
+  .main-container {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 0;
+    background: #f0f0f0;
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    position: fixed;
+    height: 100%;
+    top: 60px;
+    left: 0;
+    z-index: 90;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sidebar.open {
+    width: 280px;
+  }
+  
+  .sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .sidebar-header h3 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .sidebar-nav {
+    padding: 1rem 0;
+  }
+  
+  .sidebar-nav ul {
+    list-style: none;
+  }
+  
+  .sidebar-nav > ul > li {
+    margin-bottom: 1.2rem;
+  }
+  
+  .sidebar-nav h4 {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+  }
+  
+  .sidebar-nav a {
+    display: block;
+    padding: 0.6rem 1.5rem 0.6rem 2.5rem;
+    color: #444;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .sidebar-nav a:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* Content */
+  .content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 0;
+    transition: margin 0.3s ease;
+  }
+  
+  .content.sidebar-open {
+    margin-left: 280px;
+  }
+  
+  /* Dashboard */
+  .dashboard h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .key-indicators {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .charts-container {
+    margin-top: 2rem;
+  }
+  
+  .chart-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .chart-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .chart-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  /* Indicator Card */
+  .indicator-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .indicator-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+  }
+  
+  .indicator-header h3 {
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .trend {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .trend.up {
+    color: #28a745;
+  }
+  
+  .trend.down {
+    color: #dc3545;
+  }
+  
+  .trend.neutral {
+    color: #6c757d;
+  }
+  
+  .indicator-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .indicator-value .units {
+    font-size: 1rem;
+    color: #777;
+    margin-left: 0.3rem;
+  }
+  
+  .indicator-date {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .indicator-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+  
+  /* Time Range Controls */
+  .time-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .time-controls span {
+    margin-right: 1rem;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .time-buttons {
+    display: flex;
+  }
+  
+  .time-buttons button {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  
+  .time-buttons button:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .time-buttons button:last-child {
+    border-radius: 0 4px 4px 0;
+    margin-right: 0;
+  }
+  
+  .time-buttons button.active {
+    background: #003366;
+    color: white;
+    border-color: #003366;
+  }
+  
+  .time-buttons button:hover:not(.active) {
+    background: #e0e0e0;
+  }
+  
+  /* Chart Container */
+  .chart-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  /* Indicator pages */
+  .indicator-page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .indicator-page h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+  }
+  
+  .selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .selector label {
+    margin-right: 0.5rem;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .selector select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.9rem;
+    min-width: 240px;
+  }
+  
+  .view-toggle {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .view-toggle label {
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .view-toggle input {
+    margin-right: 0.5rem;
+  }
+  
+  .indicator-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .indicator-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .indicator-header h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .current-value {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .current-value .value {
+    font-weight: 700;
+    color: #003366;
+    margin-left: 0.5rem;
+  }
+  
+  .indicator-description {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .indicator-description h4 {
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  
+  .indicator-description p {
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Loading and Error States */
+  .loading, .error {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loading {
+    color: #777;
+  }
+  
+  .error {
+    color: #dc3545;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #003366;
+    color: white;
+    padding: 1.5rem 0;
+    margin-top: auto;
+  }
+  
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  
+  .disclaimer {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .chart-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .controls {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .time-controls {
+      margin-top: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .time-controls span {
+      margin-bottom: 0.5rem;
+    }
+    
+    .main-nav {
+      display: none;
+    }
+    
+    .sidebar.open {
+      width: 250px;
+    }
+    
+    .content.sidebar-open {
+      margin-left: 0;
+    }
+  }

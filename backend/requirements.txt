@@ -3,7 +3,7 @@ uvicorn==0.23.2
 python-dotenv==1.0.0
 httpx==0.24.1
 beautifulsoup4==4.12.2
-pandas==2.1.0
+pandas==2.2.0  # Updated to a version compatible with Python 3.12
 fredapi==0.5.0
 python-dateutil==2.8.2
 pydantic==2.3.0
