@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <p>&copy; {currentYear} Federal Reserve &amp; Economic Indicator Tracker</p>
+        <p>&copy; {currentYear} Federal Reserve &amp; Economic Statistical Tracker</p>
         <p className="disclaimer">
-          Data source: Federal Reserve Economic Data (FRED) - St. Louis Fed
+          Data source: Federal Reserve Economic Data (FRED) - Federal Reserve Bank of St. Louis
         </p>
       </div>
     </footer>

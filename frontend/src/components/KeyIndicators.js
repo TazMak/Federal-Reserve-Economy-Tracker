@@ -20,7 +20,7 @@ const KeyIndicators = ({ data }) => {
         units="%"
         date={fedFunds.date}
         trend="neutral"
-        description="The rate at which banks lend reserve balances to other banks overnight."
+        description="The target interest rate set by the Federal Open Market Committee, used by banks to charge each other for short-term loans to meet their reserve requirements."
         color="#1f77b4"
       />
       
@@ -30,7 +30,7 @@ const KeyIndicators = ({ data }) => {
         units="%"
         date={unemployment.date}
         trend="down" 
-        description="The percentage of the total labor force that is unemployed but actively seeking employment."
+        description="The percentage of the total labor force that is unemployed yet actively seeking employment."
         color="#ff7f0e"
       />
       
@@ -49,7 +49,7 @@ const KeyIndicators = ({ data }) => {
         units="$B"
         date={gdp.date}
         trend="up"
-        description="The inflation-adjusted value of the goods and services produced by labor and property located in the United States."
+        description="The inflation-adjusted value of the goods and services produced by labor and property in the United States."
         color="#d62728"
       />
     </div>

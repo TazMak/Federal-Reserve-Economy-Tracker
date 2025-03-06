@@ -10,7 +10,7 @@ const Header = ({ toggleSidebar }) => {
             <span className="menu-icon">☰</span>
           </button>
           <Link to="/" className="logo">
-            <h1>Fed Economic Tracker</h1>
+            <h1><span className="fred-logo">FRED </span> Statistical Tracker</h1>
           </Link>
         </div>
         <div className="header-right">

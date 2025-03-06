@@ -16,7 +16,7 @@ const LineChart = ({
   const chartInstance = useRef(null);
 
   useEffect(() => {
-    // If chart already exists, destroy it before creating a new one
+    // refresh the chart
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }

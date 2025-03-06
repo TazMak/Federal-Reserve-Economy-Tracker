@@ -10,9 +10,6 @@ const Sidebar = ({ isOpen }) => {
       <nav className="sidebar-nav">
         <ul>
           <li>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <li>
             <h4>Interest Rates</h4>
             <ul>
               <li><Link to="/interest-rates?series=FEDFUNDS">Federal Funds Rate</Link></li>

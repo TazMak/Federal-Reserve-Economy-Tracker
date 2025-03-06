@@ -4,7 +4,7 @@ import uvicorn
 from app.api.routes import router
 
 app = FastAPI(
-    title="Federal Reserve & Economic Indicator Tracker API",
+    title="Federal Reserve & Economic Statistical Tracker API",
     description="API for fetching economic indicators from FRED and other sources",
     version="1.0.0"
 )
@@ -23,7 +23,7 @@ app.include_router(router, prefix="/api")
 # endpoint
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the Economic Indicator Tracker API"}
+    return {"message": "Welcome to the Economic Statistical Tracker API"}
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)

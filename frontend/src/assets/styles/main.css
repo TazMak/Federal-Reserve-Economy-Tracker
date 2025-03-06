@@ -1,3 +1,4 @@
+@import url(https://fonts.google.com/specimen/Playfair+Display);
 /* Main CSS Styles */
 
 /* Reset & Base Styles */
@@ -54,6 +55,12 @@
   .logo h1 {
     font-size: 1.5rem;
     font-weight: 600;
+  }
+  
+  .fred-logo {
+    color: yellow;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
   }
   
   .menu-button {
