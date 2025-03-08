@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // axios instance with default config
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://federal-reserve-economy-tracker.onrender.com/api',
   timeout: 15000,
   headers: {
     'Content-Type': 'application/json',
