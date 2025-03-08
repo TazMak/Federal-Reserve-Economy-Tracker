@@ -3,9 +3,13 @@ from typing import List, Optional
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from app.api.services.fred_service import FREDService
+from app.api.services.regional_service import RegionalService  # Import for regional data
+from app.api.services.scraper_service import ScraperService  # Added for completeness
 
 router = APIRouter()
 fred_service = FREDService()
+regional_service = RegionalService()  # Initialize the regional service
+scraper_service = ScraperService()  # Added for completeness
 
 @router.get("/indicators")
 async def get_available_indicators():
@@ -73,5 +77,65 @@ async def get_dashboard_data():
             results[indicator] = latest
             
         return results
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Endpoints for regional data
+@router.get("/regional/{indicator}")
+async def get_regional_data(indicator: str):
+    """
+    Get regional economic data for all states for a specific indicator.
+    
+    - indicator: Indicator ID (e.g., UNRATE, MSPUS, PCPI)
+    """
+    try:
+        data = await regional_service.get_regional_data(indicator)
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/regional/{indicator}/{state_code}")
+async def get_state_data(indicator: str, state_code: str):
+    """
+    Get detailed economic data for a specific state.
+    
+    - indicator: Indicator ID (e.g., UNRATE, MSPUS, PCPI)
+    - state_code: Two-letter state code (e.g., CA, NY, TX)
+    """
+    try:
+        data = await regional_service.get_state_data(indicator, state_code)
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Endpoint to get available regional indicators
+@router.get("/regional-indicators")
+async def get_regional_indicators():
+    """Get a list of available regional economic indicators."""
+    return {
+        "indicators": [
+            {"id": "UNRATE", "name": "Unemployment Rate", "category": "Labor Market"},
+            {"id": "MSPUS", "name": "Median House Price", "category": "Housing"},
+            {"id": "PCPI", "name": "Per Capita Personal Income", "category": "Income"}
+        ]
+    }
+
+# Treasury yield data from scraper service
+@router.get("/treasury-yields")
+async def get_treasury_yields():
+    """Get current Treasury yield curve data."""
+    try:
+        data = await scraper_service.scrape_treasury_yields()
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# FOMC statements from scraper service
+@router.get("/fomc-statements")
+async def get_fomc_statements():
+    """Get recent FOMC statements."""
+    try:
+        data = await scraper_service.scrape_fomc_statements()
+        return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
