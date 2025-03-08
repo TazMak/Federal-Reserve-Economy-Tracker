@@ -9,6 +9,9 @@ import InterestRates from './components/indicators/InterestRates';
 import Inflation from './components/indicators/Inflation';
 import Unemployment from './components/indicators/Unemployment';
 import GDP from './components/indicators/GDP';
+import EconomicForecasts from './components/indicators/EconomicForecasts';
+import EconomicCalendar from './components/EconomicCalendar';
+import PersonalImpactCalculator from './components/tools/PersonalImpactCalculator'; // Added import for calculator
 
 // styling
 import './assets/styles/main.css';
@@ -33,6 +36,9 @@ function App() {
               <Route path="/inflation" element={<Inflation />} />
               <Route path="/unemployment" element={<Unemployment />} />
               <Route path="/gdp" element={<GDP />} />
+              <Route path="/forecasts" element={<EconomicForecasts />} />
+              <Route path="/calendar" element={<EconomicCalendar />} />
+              <Route path="/calculator" element={<PersonalImpactCalculator />} /> {/* Added route for calculator */}
             </Routes>
           </main>
         </div>

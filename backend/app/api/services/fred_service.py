@@ -131,13 +131,20 @@ class FREDService:
                 if observations:
                     latest = observations[0]
                     
+                    # Get the raw value - don't multiply percentages by 100
+                    raw_value = latest.get("value", "").strip()
+                    value = float(raw_value) if raw_value else None
+                    
+                    # Don't modify percentage values - they already come in the correct format
+                    # CPI and other indicator values should be returned as is
+                    
                     return {
                         "series_id": series_id,
                         "title": series_info.get("seriess", [{}])[0].get("title", ""),
                         "units": series_info.get("seriess", [{}])[0].get("units", ""),
                         "frequency": series_info.get("seriess", [{}])[0].get("frequency_short", ""),
                         "date": latest.get("date", ""),
-                        "value": float(latest.get("value", 0)) if latest.get("value", "").strip() else None
+                        "value": value
                     }
                 
                 return {

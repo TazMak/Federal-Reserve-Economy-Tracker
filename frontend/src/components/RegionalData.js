@@ -716,10 +716,6 @@ const RegionalData = () => {
             	onMouseLeave={handleStateMouseLeave}
             	className={`state-path ${hoveredState === 'GA' ? 'hovered' : ''}`}
             	/>
-
-                
-                {/* Include all other state paths from your original RegionalData.js */}
-                {/* For brevity, they are not included here */}
                 
               </svg>
             </div>

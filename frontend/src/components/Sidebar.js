@@ -36,7 +36,14 @@ const Sidebar = ({ isOpen }) => {
               <li><Link to="/gdp?series=GDPC1">Real GDP</Link></li>
             </ul>
           </li>
-          
+          <li>
+            <h4>Analysis & Planning</h4>
+            <ul>
+              <li><Link to="/forecasts">Economic Forecasts</Link></li>
+              <li><Link to="/calendar">Economic Calendar</Link></li>
+              <li><Link to="/calculator">Personal Impact Calculator</Link></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
