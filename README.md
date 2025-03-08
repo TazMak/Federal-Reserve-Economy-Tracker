@@ -9,6 +9,9 @@ The Federal Reserve Economic Tracker is a comprehensive web application that pro
 ## Features
 
 - **Interactive Dashboard**: Central hub displaying key economic metrics with real-time updates
+
+![image](https://github.com/user-attachments/assets/56eeb3f1-6ec4-4555-8e0c-c6745071687a)
+
 - **Economic Indicators**: Detailed visualizations for:
   - Interest Rates (Federal Funds Rate, Treasury Yield Spread)
   - Inflation (CPI, PCE Price Index)
