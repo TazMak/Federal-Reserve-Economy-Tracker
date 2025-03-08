@@ -83,10 +83,6 @@ This application is deployed using:
 - **Backend**: Render (Web Service)
 - **Frontend**: Netlify
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Federal Reserve Economic Data (FRED) for providing the economic data API
