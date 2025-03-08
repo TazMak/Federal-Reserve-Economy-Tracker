@@ -33,41 +33,11 @@ The Federal Reserve Economic Tracker is a comprehensive web application that pro
 - FRED API integration
 - BeautifulSoup for web scraping additional data
 
-## Installation to run Locally
-
-### Prerequisites
+### Developed Using:
 - Node.js (v14 or higher)
 - Python 3.8+
 - FRED API key ([Get one here](https://fred.stlouisfed.org/docs/api/api_key.html))
 
-### Backend Setup
-```bash
-# Clone the repository
-git clone https://github.com/TazMak/Federal-Reserve-Economy-Tracker.git
-cd Federal-Reserve-Economy-Tracker/backend
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Create .env file
-echo "FRED_API_KEY=your_api_key_here" > .env
-echo "DEBUG=True" >> .env
-
-# Start the backend server
-uvicorn app.main:app --reload
-```
-
-### Frontend Setup
-```bash
-# Navigate to the frontend directory
-cd ../frontend
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm start
-```
 
 ## API Endpoints
 
