@@ -4,7 +4,7 @@
 
 The Federal Reserve Economic Tracker is a comprehensive web application that provides real-time visualization and analysis of key U.S. economic indicators. By leveraging data from the Federal Reserve Economic Data (FRED) API, this tool enables users to monitor critical economic metrics such as interest rates, inflation, unemployment, GDP, and regional economic data.
 
-**Live Website**: [Federal Reserve Economic Tracker](https://67ccd05c3d47f6de34579fd8--federal-reserve-economic-tracker.netlify.app/)
+**Live Website**: [Federal Reserve Economic Tracker](https://federal-reserve-economic-tracker.netlify.app/)
 
 ## Features
 
