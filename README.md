@@ -6,7 +6,7 @@ The Federal Reserve Economic Tracker is a comprehensive web application that pro
 
 **Live Website**: [Federal Reserve Economic Tracker](https://federal-reserve-economic-tracker.netlify.app/)
 
-(Note: Data may take a minute or two to load, if website states "Failed to load data", please wait a minute or two, then refresh the page and try again"
+(Note: Data may take a minute or two to load, if website states "Failed to load data", please wait a minute or two, then refresh the page and try again")
 ## Features
 
 - **Interactive Dashboard**: Central hub displaying key economic metrics with real-time updates
